@@ -7,8 +7,8 @@ class Band {
 
   // Instanciar una banda desde un Map provisto por el backend
   factory Band.fromMap(Map<String, dynamic> obj) => Band(
-        id: obj['id'],
-        nombre: obj['nombre'],
-        votes: obj['votes'],
+        id: obj.containsKey('id') ? obj['id'] : 'no-id',
+        nombre: obj.containsKey('name') ? obj['name'] : 'no-name',
+        votes: obj.containsKey('votes') ? obj['votes'] : 'no-votes',
       );
 }
